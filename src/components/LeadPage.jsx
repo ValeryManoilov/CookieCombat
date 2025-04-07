@@ -65,7 +65,8 @@ function LeadPage()
       const user = tg.initDataUnsafe.user;
       axios.post("https://localhost:7057/api/addscores", 
           {
-            telegramId: user.id
+            telegramId: user.id,
+            ScoresCount: 1
           },
           {
             headers: 
