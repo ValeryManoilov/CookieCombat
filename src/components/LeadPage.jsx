@@ -23,7 +23,7 @@ const IncrementButton =  styled.button`
   border: none;
   cursor: pointer;
   transition: all 0.4s;
-  background-color: #FFFFFF;
+  background-color: #5db3fe;
   &:active
   {
     transform: scale(1.1);
@@ -64,12 +64,12 @@ const CookieImage = styled.img`
   border: none;
   cursor: pointer;
   transition: all 0.4s;
-  background-color: #FFFFFF;
+  background-color: #5db3fe;
   animation: ${rotateAnimation} ${props => props.RotateSpeed} linear infinite;
 `
 
 const Title = styled.h1`
-  margin: 4rem;
+  margin-bottom: 5rem;
   padding: 0;
   font-size: 3rem;
 `
