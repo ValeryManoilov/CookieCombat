@@ -35,6 +35,7 @@ const IncrementButton =  styled.button`
 const ClickerContainer =  styled.div`
   width: 100%;
   height: 100vh;
+  background-color: #5db3fe;
 `
 
 const ClickerContent = styled.div`
@@ -68,7 +69,7 @@ const CookieImage = styled.img`
 `
 
 const Title = styled.h1`
-  margin: 3rem;
+  margin: 4rem;
   padding: 0;
   font-size: 3rem;
 `
