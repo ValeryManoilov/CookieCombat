@@ -78,7 +78,7 @@ function LeadPage()
     const data = [...cookieStore.data].reverse()
     const foundLevel = data.find(level => scores >= level.Scores);
     console.log(foundLevel)
-    return foundLevel || data[sortedLevels.length - 1];
+    return foundLevel || data[data.length - 1];
   }, [scores])
 
 
