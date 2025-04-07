@@ -68,9 +68,9 @@ const CookieImage = styled.img`
 `
 
 const Title = styled.h1`
-  margin: 6rem;
+  margin: 3rem;
   padding: 0;
-  font-size: 6rem;
+  font-size: 3rem;
 `
 
 
