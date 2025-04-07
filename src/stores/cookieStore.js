@@ -9,17 +9,23 @@ class CookieStore
         {
             Scores: 0,
             Image: noobCookieImg,
-            Title: "Новичок"
+            Title: "Новичок",
+            AddScores: 1,
+            RotateSpeed: "8s"
         },
         {
             Scores: 10,
             Image: medianCookieImg,
-            Title: "Прошаренный"
+            Title: "Прошаренный",
+            AddScores: 2,
+            RotateSpeed: "4s"
         },
         {
             Scores: 50,
             Image: CookieImg,
-            Title: "Король"
+            Title: "Король",
+            AddScores: 4,
+            RotateSpeed: "2s"
         }
     ]
 

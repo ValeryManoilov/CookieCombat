@@ -64,7 +64,7 @@ const CookieImage = styled.img`
   cursor: pointer;
   transition: all 0.4s;
   background-color: #FFFFFF;
-  animation: ${rotateAnimation} 8s linear infinite;
+  animation: ${rotateAnimation} ${props => props.RotateSpeed} linear infinite;
 `
 
 const Title = styled.h1`
@@ -129,7 +129,7 @@ function LeadPage()
       axios.post("https://localhost:7057/api/addscores", 
           {
             telegramId: user.id,
-            ScoresCount: 1
+            ScoresCount: currentLevel.ScoresCount
           },
           {
             headers: 
@@ -161,7 +161,7 @@ function LeadPage()
           {currentLevel.Title}
         </Title>
         <IncrementButton onClick={() => AddScoresAsync()}>
-          <CookieImage src={currentLevel.Image} alt='CookieImg'/>
+          <CookieImage src={currentLevel.Image} alt='CookieImg' RotateSpeed={currentLevel.RotateSpeed}/>
           <Scores>{scores}</Scores>
         </IncrementButton>
       </ClickerContent>
