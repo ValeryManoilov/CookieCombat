@@ -129,7 +129,7 @@ function LeadPage()
       axios.post("https://localhost:7057/api/addscores", 
           {
             telegramId: user.id,
-            ScoresCount: currentLevel.ScoresCount
+            ScoresCount: currentLevel.AddScores
           },
           {
             headers: 
