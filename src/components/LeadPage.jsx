@@ -16,8 +16,8 @@ const rotateAnimation = keyframes`
 `
 
 const IncrementButton =  styled.button`
-  width: 75rem;
-  height: 75rem;
+  width: 25rem;
+  height: 25rem;
   background-size: cover;
   border: none;
   cursor: pointer;
@@ -49,6 +49,7 @@ const Scores = styled.p`
   position: absolute;
   top: 50%;
   left: 50%;
+  font-size: 5em;
 `
 
 const CookieImage = styled.img`
