@@ -72,15 +72,10 @@ function LeadPage()
 {
   const [scores, setScores] = useState();
   const tg = window.Telegram.WebApp;
-  // function setUserLevel()
-  // {
-  //   const levelNum = cookieStore.data.indexOf(cookieStore.data.reverse().find(d => scores >= d.Scores))
-  //   const needData = cookieStore.data[levelNum]
-  //   setLevelData(needData)
-  // }
 
   const currentLevel = useMemo(() => {
-    const levelNum = cookieStore.data.indexOf(cookieStore.data.reverse().find(d => scores >= d.Scores))
+    const data = [...cookieStore.data].reverse()
+    const levelNum = cookieStore.data.indexOf(d => scores >= data.Scores)
     const needData = cookieStore.data[levelNum] || cookieStore.data[0]
     return needData
   }, [scores])
