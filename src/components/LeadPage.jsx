@@ -74,10 +74,11 @@ function LeadPage()
   const tg = window.Telegram.WebApp;
 
   const currentLevel = useMemo(() => {
+
     const data = [...cookieStore.data].reverse()
-    const levelNum = cookieStore.data.indexOf(d => scores >= data.Scores)
-    const needData = cookieStore.data[levelNum] || cookieStore.data[0]
-    return needData
+    const foundLevel = data.find(level => scores >= level.Scores);
+    console.log(foundLevel)
+    return foundLevel || data[sortedLevels.length - 1];
   }, [scores])
 
 
