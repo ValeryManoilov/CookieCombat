@@ -10,12 +10,12 @@ class CookieStore
             Title: "Новичок"
         },
         {
-            Scores: 100,
+            Scores: 10,
             Image: CookieImg,
             Title: "Прошаренный"
         },
         {
-            Scores: 500,
+            Scores: 50,
             Image: CookieImg,
             Title: "Король"
         }
