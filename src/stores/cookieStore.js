@@ -5,19 +5,19 @@ class CookieStore
 {
     data = [
         {
-            "Scores": 0,
-            "Image": CookieImg,
-            "Title": "Новичок"
+            Scores: 0,
+            Image: CookieImg,
+            Title: "Новичок"
         },
         {
-            "Scores": 100,
-            "Image": CookieImg,
-            "Title": "Прошаренный"
+            Scores: 100,
+            Image: CookieImg,
+            Title: "Прошаренный"
         },
         {
-            "Scores": 500,
-            "Image": CookieImg,
-            "Title": "Король"
+            Scores: 500,
+            Image: CookieImg,
+            Title: "Король"
         }
     ]
 
