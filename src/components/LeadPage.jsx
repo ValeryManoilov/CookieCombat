@@ -16,8 +16,8 @@ const rotateAnimation = keyframes`
 `
 
 const IncrementButton =  styled.button`
-  width: 25rem;
-  height: 25rem;
+  width: 15rem;
+  height: 15rem;
   background-size: cover;
   border: none;
   cursor: pointer;
@@ -45,7 +45,7 @@ const ClickerContent = styled.div`
 `
 
 const Scores = styled.p`
-  color: #492801;
+  color: #ff9009;
   position: absolute;
   top: 50%;
   left: 50%;
