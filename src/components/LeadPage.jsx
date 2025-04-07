@@ -34,7 +34,7 @@ function LeadPage()
 
     if (tg.initDataUnsafe?.user) {
       const user = tg.initDataUnsafe.user;
-      axios.get("https://localhost:7057/checkuser", {
+      axios.get("https://localhost:7057/api/checkuser", {
           params:
           {
               telegramId: user.id
@@ -63,7 +63,7 @@ function LeadPage()
 
     if (tg.initDataUnsafe?.user) {
       const user = tg.initDataUnsafe.user;
-      axios.post("https://localhost:7057/addscores", 
+      axios.post("https://localhost:7057/api/addscores", 
           {
             telegramId: user.id
           },
