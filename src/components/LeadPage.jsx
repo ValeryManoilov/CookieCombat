@@ -72,7 +72,7 @@ function LeadPage()
 {
   const [scores, setScores] = useState();
   const tg = window.Telegram.WebApp;
-  const [levelData, setLevelData] = useState({})
+  const [levelData, setLevelData] = useState(cookieStore.data[0])
 
   function setUserLevel()
   {
@@ -149,7 +149,7 @@ function LeadPage()
 
   useEffect(() => {
     setUserLevel()
-  }, [AddScoresAsync])
+  }, [scores])
   
   return (
     <ClickerContainer>
