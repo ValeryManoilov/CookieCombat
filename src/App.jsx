@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LeadPage from './components/LeadPage';
 import React from 'react'
 import { observer } from 'mobx-react';
+import "./App.css"
 
 const App = observer(() => {  
   return (
