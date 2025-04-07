@@ -136,9 +136,9 @@ function LeadPage()
   return (
     <ClickerContainer>
       <ClickerContent>
-        <Scores>{scores}</Scores>
         <IncrementButton onClick={() => AddScoresAsync()}>
           <CookieImage src={CookieImg} alt='CookieImg'/>
+          <Scores>{scores}</Scores>
         </IncrementButton>
       </ClickerContent>
     </ClickerContainer>
