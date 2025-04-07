@@ -66,7 +66,7 @@ const CookieImage = styled.img`
   transition: all 0.4s;
   background-color: #5db3fe;
   animation: ${rotateAnimation} ${props => props.RotateSpeed} linear infinite;
-  box-shadow: #ff3700 1px 0 10px;
+  filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.3));
 `
 
 const Title = styled.h1`
