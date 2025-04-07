@@ -45,12 +45,14 @@ const ClickerContent = styled.div`
 `
 
 const Scores = styled.p`
-  color: #ff9009;
+  color: #150000;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5em;
+
+  text-shadow: #fc0 1px 0 10px;
 `
 
 const CookieImage = styled.img`
