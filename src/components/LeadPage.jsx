@@ -49,7 +49,7 @@ const Scores = styled.p`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
   font-size: 5em;
 
   text-shadow: #fc0 1px 0 10px;
