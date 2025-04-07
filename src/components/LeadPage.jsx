@@ -41,6 +41,7 @@ const ClickerContent = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `
@@ -64,6 +65,12 @@ const CookieImage = styled.img`
   transition: all 0.4s;
   background-color: #FFFFFF;
   animation: ${rotateAnimation} 8s linear infinite;
+`
+
+const Title = styled.h1`
+  margin: 6rem;
+  padding: 0;
+  font-size: 6rem;
 `
 
 
@@ -150,7 +157,9 @@ function LeadPage()
   return (
     <ClickerContainer>
       <ClickerContent>
-        {currentLevel.Title}
+        <Title>
+          {currentLevel.Title}
+        </Title>
         <IncrementButton onClick={() => AddScoresAsync()}>
           <CookieImage src={currentLevel.Image} alt='CookieImg'/>
           <Scores>{scores}</Scores>
