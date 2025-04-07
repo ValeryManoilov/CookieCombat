@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styled, { keyframes } from "styled-components";
 import axios from "axios";
 import React from 'react'
@@ -72,14 +72,18 @@ function LeadPage()
 {
   const [scores, setScores] = useState();
   const tg = window.Telegram.WebApp;
-  const [levelData, setLevelData] = useState(cookieStore.data[0])
+  // function setUserLevel()
+  // {
+  //   const levelNum = cookieStore.data.indexOf(cookieStore.data.reverse().find(d => scores >= d.Scores))
+  //   const needData = cookieStore.data[levelNum]
+  //   setLevelData(needData)
+  // }
 
-  function setUserLevel()
-  {
-    const levelNum = cookieStore.data.indexOf(cookieStore.data.find(d => scores >= d.Scores))
-    const needData = cookieStore.data[levelNum]
-    setLevelData(needData)
-  }
+  const currentLevel = useMemo(() => {
+    const levelNum = cookieStore.data.indexOf(cookieStore.data.reverse().find(d => scores >= d.Scores))
+    const needData = cookieStore.data[levelNum] || cookieStore.data[0]
+    return needData
+  }, [scores])
 
 
   function GetScoresByTelegramId()
@@ -147,16 +151,12 @@ function LeadPage()
     GetScoresByTelegramId()
   }, [])
 
-  useEffect(() => {
-    setUserLevel()
-  }, [scores])
-  
   return (
     <ClickerContainer>
       <ClickerContent>
-        {levelData.Title}
+        {currentLevel.Title}
         <IncrementButton onClick={() => AddScoresAsync()}>
-          <CookieImage src={levelData.Image} alt='CookieImg'/>
+          <CookieImage src={currentLevel.Image} alt='CookieImg'/>
           <Scores>{scores}</Scores>
         </IncrementButton>
       </ClickerContent>
