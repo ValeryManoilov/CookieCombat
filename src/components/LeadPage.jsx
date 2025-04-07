@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import axios from "axios";
 import React from 'react'
 import CookieImg from "../assets/cookie.png";
+import cookieStore from '../stores/cookieStore';
 
 const rotateAnimation = keyframes`
   0%{
@@ -71,6 +72,15 @@ function LeadPage()
 {
   const [scores, setScores] = useState();
   const tg = window.Telegram.WebApp;
+  const [levelData, setLevelData] = useState({})
+
+  function setUserLevel()
+  {
+    const levelNum = cookieStore.data.indexOf(cookieStore.data.find(d => scores >= d.Scores))
+    const needData = cookieStore.data[levelNum]
+    setLevelData(needData)
+  }
+
 
   function GetScoresByTelegramId()
   {
@@ -136,12 +146,17 @@ function LeadPage()
   useEffect(() => {
     GetScoresByTelegramId()
   }, [])
+
+  useEffect(() => {
+    setUserLevel()
+  }, [AddScoresAsync])
   
   return (
     <ClickerContainer>
       <ClickerContent>
+        {levelData.Title}
         <IncrementButton onClick={() => AddScoresAsync()}>
-          <CookieImage src={CookieImg} alt='CookieImg'/>
+          <CookieImage src={levelData.Image} alt='CookieImg'/>
           <Scores>{scores}</Scores>
         </IncrementButton>
       </ClickerContent>
