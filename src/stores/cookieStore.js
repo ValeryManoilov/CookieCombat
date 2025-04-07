@@ -1,17 +1,19 @@
 import { makeAutoObservable } from "mobx";
 import CookieImg from "../assets/cookie.png"
+import noobCookieImg from "../assets/noobCookie.png"
+import medianCookieImg from "../assets/medianCookie.png"
 
 class CookieStore
 {
     data = [
         {
             Scores: 0,
-            Image: CookieImg,
+            Image: noobCookieImg,
             Title: "Новичок"
         },
         {
             Scores: 10,
-            Image: CookieImg,
+            Image: medianCookieImg,
             Title: "Прошаренный"
         },
         {
