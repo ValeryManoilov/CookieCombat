@@ -1,22 +1,64 @@
 import { useEffect, useState } from 'react';
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import axios from "axios";
 import React from 'react'
+import CookieImg from "../assets/cookie.png";
 
-const IncrementButton =  styled.button`
+const rotateAnimation = keyframes`
+  0%{
+    transform: rotate(0deg);
+  };
 
+  100%
+  {
+    transform: rotate(360deg);
+  }
 `
 
-const ClickerContainer =  styled.div`
+const IncrementButton =  styled.button`
+  width: 75rem;
+  height: 75rem;
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  background-color: #FFFFFF;
+  &:active
+  {
+    transform: scale(1.1);
+  }
+  position: relative;
+`
 
+
+const ClickerContainer =  styled.div`
+  width: 100%;
+  height: 100vh;
 `
 
 const ClickerContent = styled.div`
-
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
-const Scores = styled.div`
+const Scores = styled.p`
+  color: #492801;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+`
 
+const CookieImage = styled.img`
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  background-color: #FFFFFF;
+  animation: ${rotateAnimation} 8s linear infinite;
 `
 
 
@@ -95,7 +137,9 @@ function LeadPage()
     <ClickerContainer>
       <ClickerContent>
         <Scores>{scores}</Scores>
-        <IncrementButton onClick={() => AddScoresAsync()}>+</IncrementButton>
+        <IncrementButton onClick={() => AddScoresAsync()}>
+          <CookieImage src={CookieImg} alt='CookieImg'/>
+        </IncrementButton>
       </ClickerContent>
     </ClickerContainer>
   )
